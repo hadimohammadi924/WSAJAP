@@ -17,8 +17,8 @@ namespace vv.Controllers
     public class HomeController : Controller
     {
 
-        pgtabir1_shineEntities4 db = new pgtabir1_shineEntities4();
-        pgtabir1_shineEntities4 dbb = new pgtabir1_shineEntities4();
+        pgtabir1_shineEntities7 db = new pgtabir1_shineEntities7();
+        pgtabir1_shineEntities7 dbb = new pgtabir1_shineEntities7();
 
 
 
@@ -731,7 +731,67 @@ namespace vv.Controllers
         //////first cumment
         ////seced comment
 
+        public JsonResult insert_tiket(tiket tik)
+        {
+            dbb.tiket.Add(tik);
+            dbb.SaveChanges();
 
+            tiket tt = dbb.tiket.ToList().Last();
+
+
+            var jsondata = Json(tt, JsonRequestBehavior.AllowGet);
+            return jsondata;
+        }
+
+        public String insert_respone(int id_tiket, string tdate, string ttime, string tcategori, string ttitle, string tdescription, string tbgcode, string bgname, string btell, string tvisitor, string tresponse, string trdate, string trtime, string truser, string tstatus, string x1, string x2, string x3, string x4)
+        {
+            tiket selectcust = dbb.tiket.Find(id_tiket);
+            if (selectcust != null)
+            {
+                selectcust.tdate = tdate;
+                selectcust.ttime = ttime;
+                selectcust.tcategori = tcategori;
+                selectcust.ttitle = ttitle;
+                selectcust.tdescription = tdescription;
+                selectcust.tpgcode = tbgcode;
+                selectcust.tgname = bgname;
+                selectcust.btell = btell;
+                selectcust.tvisitor = tvisitor;
+                selectcust.tresponse = tresponse;
+                selectcust.trdate = trdate;
+                selectcust.trtime = trtime;
+                selectcust.truser = truser;
+                selectcust.tstatuse = tstatus;
+                selectcust.x1 = x1;
+                selectcust.x2 = x2;
+                selectcust.x3 = x3;
+                selectcust.x4 = x4;
+
+                dbb.Entry(selectcust).State = System.Data.Entity.EntityState.Modified;
+                dbb.SaveChanges();
+                return "تغیرات لحاظ شد";
+
+            }
+            else
+            {
+                return "نتوانستیم تغیرات را اعمال کنیم";
+            }
+        }
+        public JsonResult getaltiket()
+        {
+            List<tiket> list;
+            list = dbb.tiket.ToList();
+            var jsondata = Json(list, JsonRequestBehavior.AllowGet);
+            return jsondata;
+        }
+        public JsonResult getaltikett(int id_tiket)
+        {
+            tiket selecttiket = dbb.tiket.Find(id_tiket);
+            // List<tiket> list;
+            //  list = mode8.tiket.ToList();
+            var jsondata = Json(selecttiket, JsonRequestBehavior.AllowGet);
+            return jsondata;
+        }
 
 
 

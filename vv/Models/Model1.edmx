@@ -249,10 +249,11 @@
           <Property Name="type4" Type="nvarchar" MaxLength="200" />
           <Property Name="type5" Type="nvarchar" MaxLength="200" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'pgtabir1_shine.sa_pgtab.tiket' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
         <EntityType Name="tiket">
-          <Property Name="id_tiket" Type="int" />
+          <Key>
+            <PropertyRef Name="id_tiket" />
+          </Key>
+          <Property Name="id_tiket" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="tdate" Type="nvarchar" MaxLength="50" />
           <Property Name="ttime" Type="nvarchar" MaxLength="50" />
           <Property Name="tcategori" Type="nvarchar" MaxLength="500" />
@@ -271,7 +272,7 @@ warning 6013: The table/view 'pgtabir1_shine.sa_pgtab.tiket' does not have a pri
           <Property Name="x2" Type="nvarchar" MaxLength="500" />
           <Property Name="x3" Type="nvarchar" MaxLength="500" />
           <Property Name="x4" Type="nvarchar" MaxLength="500" />
-        </EntityType>-->
+        </EntityType>
         <EntityType Name="update">
           <Key>
             <PropertyRef Name="id_vy" />
@@ -462,6 +463,7 @@ warning 6013: The table/view 'pgtabir1_shine.sa_pgtab.tiket' does not have a pri
           <EntitySet Name="SUSERS" EntityType="Self.SUSERS" Schema="sa_pgtab" store:Type="Tables" />
           <EntitySet Name="tanbih" EntityType="Self.tanbih" Schema="sa_pgtab" store:Type="Tables" />
           <EntitySet Name="tarfi" EntityType="Self.tarfi" Schema="sa_pgtab" store:Type="Tables" />
+          <EntitySet Name="tiket" EntityType="Self.tiket" Schema="sa_pgtab" store:Type="Tables" />
           <EntitySet Name="update" EntityType="Self.update" Schema="sa_pgtab" store:Type="Tables" />
           <EntitySet Name="zemanatname" EntityType="Self.zemanatname" Schema="sa_pgtab" store:Type="Tables" />
           <AssociationSet Name="FK_Contacts_Users" Association="Self.FK_Contacts_Users">
@@ -786,6 +788,30 @@ warning 6013: The table/view 'pgtabir1_shine.sa_pgtab.tiket' does not have a pri
           <Property Name="type4" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="type5" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
         </EntityType>
+        <EntityType Name="tiket">
+          <Key>
+            <PropertyRef Name="id_tiket" />
+          </Key>
+          <Property Name="id_tiket" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tdate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ttime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="tcategori" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="ttitle" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="tdescription" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="tpgcode" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="tgname" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="btell" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="tvisitor" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="tresponse" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="trdate" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="trtime" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="truser" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="tstatuse" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="x1" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="x2" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="x3" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="x4" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
         <EntityType Name="update">
           <Key>
             <PropertyRef Name="id_vy" />
@@ -959,7 +985,7 @@ warning 6013: The table/view 'pgtabir1_shine.sa_pgtab.tiket' does not have a pri
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="pgtabir1_shineEntities4" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="pgtabir1_shineEntities7" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Contacts" EntityType="Self.Contacts" />
           <EntitySet Name="Devices" EntityType="Self.Devices" />
           <EntitySet Name="GroupMessages" EntityType="Self.GroupMessages" />
@@ -976,6 +1002,7 @@ warning 6013: The table/view 'pgtabir1_shine.sa_pgtab.tiket' does not have a pri
           <EntitySet Name="SUSERS" EntityType="Self.SUSERS" />
           <EntitySet Name="tanbih" EntityType="Self.tanbih" />
           <EntitySet Name="tarfi" EntityType="Self.tarfi" />
+          <EntitySet Name="tiket" EntityType="Self.tiket" />
           <EntitySet Name="update" EntityType="Self.update" />
           <EntitySet Name="zemanatname" EntityType="Self.zemanatname" />
           <AssociationSet Name="FK_Contacts_Users" Association="Self.FK_Contacts_Users">
@@ -1032,7 +1059,7 @@ warning 6013: The table/view 'pgtabir1_shine.sa_pgtab.tiket' does not have a pri
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="pgtabir1_shineModelStoreContainer" CdmEntityContainer="pgtabir1_shineEntities4">
+        <EntityContainerMapping StorageEntityContainer="pgtabir1_shineModelStoreContainer" CdmEntityContainer="pgtabir1_shineEntities7">
           <EntitySetMapping Name="Contacts">
             <EntityTypeMapping TypeName="pgtabir1_shineModel.Contacts">
               <MappingFragment StoreEntitySet="Contacts">
@@ -1290,6 +1317,31 @@ warning 6013: The table/view 'pgtabir1_shine.sa_pgtab.tiket' does not have a pri
                 <ScalarProperty Name="type3" ColumnName="type3" />
                 <ScalarProperty Name="type4" ColumnName="type4" />
                 <ScalarProperty Name="type5" ColumnName="type5" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tiket">
+            <EntityTypeMapping TypeName="pgtabir1_shineModel.tiket">
+              <MappingFragment StoreEntitySet="tiket">
+                <ScalarProperty Name="id_tiket" ColumnName="id_tiket" />
+                <ScalarProperty Name="tdate" ColumnName="tdate" />
+                <ScalarProperty Name="ttime" ColumnName="ttime" />
+                <ScalarProperty Name="tcategori" ColumnName="tcategori" />
+                <ScalarProperty Name="ttitle" ColumnName="ttitle" />
+                <ScalarProperty Name="tdescription" ColumnName="tdescription" />
+                <ScalarProperty Name="tpgcode" ColumnName="tpgcode" />
+                <ScalarProperty Name="tgname" ColumnName="tgname" />
+                <ScalarProperty Name="btell" ColumnName="btell" />
+                <ScalarProperty Name="tvisitor" ColumnName="tvisitor" />
+                <ScalarProperty Name="tresponse" ColumnName="tresponse" />
+                <ScalarProperty Name="trdate" ColumnName="trdate" />
+                <ScalarProperty Name="trtime" ColumnName="trtime" />
+                <ScalarProperty Name="truser" ColumnName="truser" />
+                <ScalarProperty Name="tstatuse" ColumnName="tstatuse" />
+                <ScalarProperty Name="x1" ColumnName="x1" />
+                <ScalarProperty Name="x2" ColumnName="x2" />
+                <ScalarProperty Name="x3" ColumnName="x3" />
+                <ScalarProperty Name="x4" ColumnName="x4" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

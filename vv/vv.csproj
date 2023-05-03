@@ -244,6 +244,9 @@
     <Compile Include="Models\tarfi.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\tiket.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\update.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>

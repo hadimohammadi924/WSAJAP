@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="a6e7ece5d8bd4897aad85e73702536c6" Name="Diagram1">
+      <Diagram DiagramId="71cb1ca1451149dabb5c876c3fe1f149" Name="Diagram1">
         <EntityTypeShape EntityType="pgtabir1_shineModel.Contacts" Width="1.5" PointX="3" PointY="4" IsExpanded="true" />
         <EntityTypeShape EntityType="pgtabir1_shineModel.Devices" Width="1.5" PointX="3" PointY="7" IsExpanded="true" />
         <EntityTypeShape EntityType="pgtabir1_shineModel.GroupMessages" Width="1.5" PointX="5.25" PointY="10.25" IsExpanded="true" />
@@ -21,8 +21,9 @@
         <EntityTypeShape EntityType="pgtabir1_shineModel.SUSERS" Width="1.5" PointX="12.75" PointY="4.75" IsExpanded="true" />
         <EntityTypeShape EntityType="pgtabir1_shineModel.tanbih" Width="1.5" PointX="12.75" PointY="9.75" IsExpanded="true" />
         <EntityTypeShape EntityType="pgtabir1_shineModel.tarfi" Width="1.5" PointX="13.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="pgtabir1_shineModel.update" Width="1.5" PointX="12.75" PointY="13.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="pgtabir1_shineModel.zemanatname" Width="1.5" PointX="14.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="pgtabir1_shineModel.tiket" Width="1.5" PointX="12.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="pgtabir1_shineModel.update" Width="1.5" PointX="14.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="pgtabir1_shineModel.zemanatname" Width="1.5" PointX="7.75" PointY="14.75" IsExpanded="true" />
         <AssociationConnector Association="pgtabir1_shineModel.FK_Contacts_Users" ManuallyRouted="false" />
         <AssociationConnector Association="pgtabir1_shineModel.FK_Contacts_Users1" ManuallyRouted="false" />
         <AssociationConnector Association="pgtabir1_shineModel.FK_Devices_Users" ManuallyRouted="false" />

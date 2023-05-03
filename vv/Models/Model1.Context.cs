@@ -13,10 +13,10 @@ namespace vv.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class pgtabir1_shineEntities4 : DbContext
+    public partial class pgtabir1_shineEntities7 : DbContext
     {
-        public pgtabir1_shineEntities4()
-            : base("name=pgtabir1_shineEntities4")
+        public pgtabir1_shineEntities7()
+            : base("name=pgtabir1_shineEntities7")
         {
         }
     
@@ -41,6 +41,7 @@ namespace vv.Models
         public virtual DbSet<SUSERS> SUSERS { get; set; }
         public virtual DbSet<tanbih> tanbih { get; set; }
         public virtual DbSet<tarfi> tarfi { get; set; }
+        public virtual DbSet<tiket> tiket { get; set; }
         public virtual DbSet<update> update { get; set; }
         public virtual DbSet<zemanatname> zemanatname { get; set; }
     }
