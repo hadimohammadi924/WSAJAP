@@ -13,10 +13,10 @@ namespace vv.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class pgtabir1_shineEntities3 : DbContext
+    public partial class pgtabir1_shineEntities4 : DbContext
     {
-        public pgtabir1_shineEntities3()
-            : base("name=pgtabir1_shineEntities3")
+        public pgtabir1_shineEntities4()
+            : base("name=pgtabir1_shineEntities4")
         {
         }
     

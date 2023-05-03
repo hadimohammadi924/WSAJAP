@@ -17,8 +17,8 @@ namespace vv.Controllers
     public class HomeController : Controller
     {
 
-        pgtabir1_shineEntities3 db = new pgtabir1_shineEntities3();
-        pgtabir1_shineEntities3 dbb = new pgtabir1_shineEntities3();
+        pgtabir1_shineEntities4 db = new pgtabir1_shineEntities4();
+        pgtabir1_shineEntities4 dbb = new pgtabir1_shineEntities4();
 
 
 

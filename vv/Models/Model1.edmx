@@ -249,6 +249,29 @@
           <Property Name="type4" Type="nvarchar" MaxLength="200" />
           <Property Name="type5" Type="nvarchar" MaxLength="200" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'pgtabir1_shine.sa_pgtab.tiket' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="tiket">
+          <Property Name="id_tiket" Type="int" />
+          <Property Name="tdate" Type="nvarchar" MaxLength="50" />
+          <Property Name="ttime" Type="nvarchar" MaxLength="50" />
+          <Property Name="tcategori" Type="nvarchar" MaxLength="500" />
+          <Property Name="ttitle" Type="nvarchar" MaxLength="500" />
+          <Property Name="tdescription" Type="nvarchar" MaxLength="500" />
+          <Property Name="tpgcode" Type="nvarchar" MaxLength="500" />
+          <Property Name="tgname" Type="nvarchar" MaxLength="500" />
+          <Property Name="btell" Type="nvarchar" MaxLength="500" />
+          <Property Name="tvisitor" Type="nvarchar" MaxLength="500" />
+          <Property Name="tresponse" Type="nvarchar" MaxLength="500" />
+          <Property Name="trdate" Type="nvarchar" MaxLength="500" />
+          <Property Name="trtime" Type="nvarchar" MaxLength="500" />
+          <Property Name="truser" Type="nvarchar" MaxLength="500" />
+          <Property Name="tstatuse" Type="nvarchar" MaxLength="500" />
+          <Property Name="x1" Type="nvarchar" MaxLength="500" />
+          <Property Name="x2" Type="nvarchar" MaxLength="500" />
+          <Property Name="x3" Type="nvarchar" MaxLength="500" />
+          <Property Name="x4" Type="nvarchar" MaxLength="500" />
+        </EntityType>-->
         <EntityType Name="update">
           <Key>
             <PropertyRef Name="id_vy" />
@@ -936,7 +959,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="pgtabir1_shineEntities3" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="pgtabir1_shineEntities4" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Contacts" EntityType="Self.Contacts" />
           <EntitySet Name="Devices" EntityType="Self.Devices" />
           <EntitySet Name="GroupMessages" EntityType="Self.GroupMessages" />
@@ -1009,7 +1032,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="pgtabir1_shineModelStoreContainer" CdmEntityContainer="pgtabir1_shineEntities3">
+        <EntityContainerMapping StorageEntityContainer="pgtabir1_shineModelStoreContainer" CdmEntityContainer="pgtabir1_shineEntities4">
           <EntitySetMapping Name="Contacts">
             <EntityTypeMapping TypeName="pgtabir1_shineModel.Contacts">
               <MappingFragment StoreEntitySet="Contacts">
