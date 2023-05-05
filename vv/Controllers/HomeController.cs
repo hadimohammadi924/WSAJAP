@@ -17,8 +17,8 @@ namespace vv.Controllers
     public class HomeController : Controller
     {
 
-        pgtabir1_shineEntities7 db = new pgtabir1_shineEntities7();
-        pgtabir1_shineEntities7 dbb = new pgtabir1_shineEntities7();
+        pgtabir1_shineEntities9 db = new pgtabir1_shineEntities9();
+        pgtabir1_shineEntities9 dbb = new pgtabir1_shineEntities9();
 
 
 
@@ -792,7 +792,31 @@ namespace vv.Controllers
             var jsondata = Json(selecttiket, JsonRequestBehavior.AllowGet);
             return jsondata;
         }
+     
+        public JsonResult update_lastupdate(int suserid,string lastupdate,string Devise_name,string Devise_ID)
+        {
+            SUSERS selectrecord = dbb.SUSERS.Find(suserid);
+            if (selectrecord != null)
+            {
+                selectrecord.lastupdate = lastupdate;
+                selectrecord.Devise_name = Devise_name;
+                selectrecord.Devise_ID = Devise_ID;
+               
 
+
+                dbb.Entry(selectrecord).State = System.Data.Entity.EntityState.Modified;
+                dbb.SaveChanges();
+             
+               return Json(new { statue = "ok" }, JsonRequestBehavior.AllowGet);
+
+            }
+            else
+            {
+
+                return Json(new { statue = "no" }, JsonRequestBehavior.AllowGet);
+
+            }
+        }
 
 
 

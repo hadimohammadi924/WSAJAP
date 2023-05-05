@@ -12,11 +12,13 @@ namespace vv.Models
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
-    public partial class pgtabir1_shineEntities7 : DbContext
+    public partial class pgtabir1_shineEntities9 : DbContext
     {
-        public pgtabir1_shineEntities7()
-            : base("name=pgtabir1_shineEntities7")
+        public pgtabir1_shineEntities9()
+            : base("name=pgtabir1_shineEntities9")
         {
         }
     
@@ -44,5 +46,10 @@ namespace vv.Models
         public virtual DbSet<tiket> tiket { get; set; }
         public virtual DbSet<update> update { get; set; }
         public virtual DbSet<zemanatname> zemanatname { get; set; }
+    
+        public virtual int sp_upgraddiagrams()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_upgraddiagrams");
+        }
     }
 }

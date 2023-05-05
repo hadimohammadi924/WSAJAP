@@ -26,5 +26,10 @@ namespace vv.Models
         public string x3 { get; set; }
         public string x4 { get; set; }
         public string x5 { get; set; }
+        public string Devise_Model { get; set; }
+        public string Devise_name { get; set; }
+        public string Devise_ID { get; set; }
+        public string Divise_Token { get; set; }
+        public string lastupdate { get; set; }
     }
 }

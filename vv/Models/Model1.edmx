@@ -220,6 +220,11 @@
           <Property Name="x3" Type="nvarchar" MaxLength="100" />
           <Property Name="x4" Type="nvarchar" MaxLength="100" />
           <Property Name="x5" Type="nvarchar" MaxLength="100" />
+          <Property Name="Devise_Model" Type="nvarchar" MaxLength="500" />
+          <Property Name="Devise_name" Type="nvarchar" MaxLength="500" />
+          <Property Name="Devise_ID" Type="nvarchar" MaxLength="500" />
+          <Property Name="Divise_Token" Type="nvarchar" MaxLength="500" />
+          <Property Name="lastupdate" Type="nvarchar" MaxLength="500" />
         </EntityType>
         <EntityType Name="tanbih">
           <Key>
@@ -446,6 +451,8 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+        <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="pgtabir1_shineModelStoreContainer">
           <EntitySet Name="Contacts" EntityType="Self.Contacts" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Devices" EntityType="Self.Devices" Schema="dbo" store:Type="Tables" />
@@ -759,6 +766,11 @@
           <Property Name="x3" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="x4" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="x5" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Devise_Model" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Devise_name" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Devise_ID" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Divise_Token" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="lastupdate" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="tanbih">
           <Key>
@@ -985,7 +997,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="pgtabir1_shineEntities7" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="pgtabir1_shineEntities9" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Contacts" EntityType="Self.Contacts" />
           <EntitySet Name="Devices" EntityType="Self.Devices" />
           <EntitySet Name="GroupMessages" EntityType="Self.GroupMessages" />
@@ -1053,13 +1065,14 @@
             <End Role="Users" EntitySet="Users" />
             <End Role="MessageSeens" EntitySet="MessageSeens" />
           </AssociationSet>
+          <FunctionImport Name="sp_upgraddiagrams" />
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="pgtabir1_shineModelStoreContainer" CdmEntityContainer="pgtabir1_shineEntities7">
+        <EntityContainerMapping StorageEntityContainer="pgtabir1_shineModelStoreContainer" CdmEntityContainer="pgtabir1_shineEntities9">
           <EntitySetMapping Name="Contacts">
             <EntityTypeMapping TypeName="pgtabir1_shineModel.Contacts">
               <MappingFragment StoreEntitySet="Contacts">
@@ -1287,6 +1300,11 @@
                 <ScalarProperty Name="x3" ColumnName="x3" />
                 <ScalarProperty Name="x4" ColumnName="x4" />
                 <ScalarProperty Name="x5" ColumnName="x5" />
+                <ScalarProperty Name="Devise_Model" ColumnName="Devise_Model" />
+                <ScalarProperty Name="Devise_name" ColumnName="Devise_name" />
+                <ScalarProperty Name="Devise_ID" ColumnName="Devise_ID" />
+                <ScalarProperty Name="Divise_Token" ColumnName="Divise_Token" />
+                <ScalarProperty Name="lastupdate" ColumnName="lastupdate" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1376,6 +1394,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="pgtabir1_shineModel.Store.sp_upgraddiagrams" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
