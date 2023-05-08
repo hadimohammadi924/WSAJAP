@@ -839,6 +839,9 @@ namespace vv.Controllers
             list = dbb.ettelat.ToList();
             var jsondata = Json(list, JsonRequestBehavior.AllowGet);
             return jsondata;
+
+
+            //shab
         }
 
     }
