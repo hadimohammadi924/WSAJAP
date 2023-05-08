@@ -15,10 +15,10 @@ namespace vv.Models
     using System.Data.Entity.Core.Objects;
     using System.Linq;
     
-    public partial class pgtabir1_shineEntities9 : DbContext
+    public partial class pgtabir1_shineEntities10 : DbContext
     {
-        public pgtabir1_shineEntities9()
-            : base("name=pgtabir1_shineEntities9")
+        public pgtabir1_shineEntities10()
+            : base("name=pgtabir1_shineEntities10")
         {
         }
     
@@ -36,6 +36,7 @@ namespace vv.Models
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Users> Users { get; set; }
         public virtual DbSet<ahkam> ahkam { get; set; }
+        public virtual DbSet<ettelat> ettelat { get; set; }
         public virtual DbSet<pmp> pmp { get; set; }
         public virtual DbSet<pvupdate> pvupdate { get; set; }
         public virtual DbSet<SDATA> SDATA { get; set; }

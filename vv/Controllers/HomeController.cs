@@ -17,8 +17,8 @@ namespace vv.Controllers
     public class HomeController : Controller
     {
 
-        pgtabir1_shineEntities9 db = new pgtabir1_shineEntities9();
-        pgtabir1_shineEntities9 dbb = new pgtabir1_shineEntities9();
+        pgtabir1_shineEntities10 db = new pgtabir1_shineEntities10();
+        pgtabir1_shineEntities10 dbb = new pgtabir1_shineEntities10();
 
 
 
@@ -833,7 +833,13 @@ namespace vv.Controllers
             }
         }
 
-
+        public JsonResult ettelaat()
+        {
+            List<ettelat> list;
+            list = dbb.ettelat.ToList();
+            var jsondata = Json(list, JsonRequestBehavior.AllowGet);
+            return jsondata;
+        }
 
     }
 }

@@ -112,6 +112,19 @@
           <Property Name="type4" Type="nvarchar" MaxLength="200" />
           <Property Name="type5" Type="nvarchar" MaxLength="200" />
         </EntityType>
+        <EntityType Name="ettelat">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="type" Type="nvarchar(max)" />
+          <Property Name="date" Type="nvarchar(max)" />
+          <Property Name="type1" Type="nvarchar(max)" />
+          <Property Name="type2" Type="nvarchar(max)" />
+          <Property Name="type3" Type="nvarchar(max)" />
+          <Property Name="type4" Type="nvarchar(max)" />
+          <Property Name="type5" Type="nvarchar(max)" />
+        </EntityType>
         <EntityType Name="pmp">
           <Key>
             <PropertyRef Name="id_pmp" />
@@ -463,6 +476,7 @@
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ahkam" EntityType="Self.ahkam" Schema="sa_pgtab" store:Type="Tables" />
+          <EntitySet Name="ettelat" EntityType="Self.ettelat" Schema="sa_pgtab" store:Type="Tables" />
           <EntitySet Name="pmp" EntityType="Self.pmp" Schema="sa_pgtab" store:Type="Tables" />
           <EntitySet Name="pvupdate" EntityType="Self.pvupdate" Schema="sa_pgtab" store:Type="Tables" />
           <EntitySet Name="SDATA" EntityType="Self.SDATA" Schema="sa_pgtab" store:Type="Tables" />
@@ -657,6 +671,19 @@
           <Property Name="type3" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="type4" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="type5" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ettelat">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="type" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="date" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="type1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="type2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="type3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="type4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="type5" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="pmp">
           <Key>
@@ -997,7 +1024,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="pgtabir1_shineEntities9" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="pgtabir1_shineEntities10" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Contacts" EntityType="Self.Contacts" />
           <EntitySet Name="Devices" EntityType="Self.Devices" />
           <EntitySet Name="GroupMessages" EntityType="Self.GroupMessages" />
@@ -1007,6 +1034,7 @@
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
           <EntitySet Name="Users" EntityType="Self.Users" />
           <EntitySet Name="ahkam" EntityType="Self.ahkam" />
+          <EntitySet Name="ettelat" EntityType="Self.ettelat" />
           <EntitySet Name="pmp" EntityType="Self.pmp" />
           <EntitySet Name="pvupdate" EntityType="Self.pvupdate" />
           <EntitySet Name="SDATA" EntityType="Self.SDATA" />
@@ -1072,7 +1100,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="pgtabir1_shineModelStoreContainer" CdmEntityContainer="pgtabir1_shineEntities9">
+        <EntityContainerMapping StorageEntityContainer="pgtabir1_shineModelStoreContainer" CdmEntityContainer="pgtabir1_shineEntities10">
           <EntitySetMapping Name="Contacts">
             <EntityTypeMapping TypeName="pgtabir1_shineModel.Contacts">
               <MappingFragment StoreEntitySet="Contacts">
@@ -1179,6 +1207,20 @@
               <MappingFragment StoreEntitySet="ahkam">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="userpersonal" ColumnName="userpersonal" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="type1" ColumnName="type1" />
+                <ScalarProperty Name="type2" ColumnName="type2" />
+                <ScalarProperty Name="type3" ColumnName="type3" />
+                <ScalarProperty Name="type4" ColumnName="type4" />
+                <ScalarProperty Name="type5" ColumnName="type5" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ettelat">
+            <EntityTypeMapping TypeName="pgtabir1_shineModel.ettelat">
+              <MappingFragment StoreEntitySet="ettelat">
+                <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="type" ColumnName="type" />
                 <ScalarProperty Name="date" ColumnName="date" />
                 <ScalarProperty Name="type1" ColumnName="type1" />

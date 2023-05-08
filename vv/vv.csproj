@@ -193,6 +193,9 @@
     <Compile Include="Models\Devices.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ettelat.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\GroupMessages.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
